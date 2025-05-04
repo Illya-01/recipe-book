@@ -65,7 +65,14 @@ const RecipeDetail: React.FC = () => {
         {recipe.strInstructions && (
           <div className="recipe-instructions">
             <h3>Instructions</h3>
-            <p>{recipe.strInstructions}</p>
+            <p>
+              {recipe.strInstructions.split('\r\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
           </div>
         )}
       </div>
